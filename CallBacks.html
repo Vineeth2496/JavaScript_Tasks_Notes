@@ -1,0 +1,77 @@
+    <!--
+        we have two types of network class
+        1) Synchronous
+        2) Asychronous
+
+        execution of network calls one by one called as synchronous calls
+
+        execution of network calls parallely called as asynchronous calls
+
+        we can make asynchronus call in different ways
+
+        1) callbacks
+        2) promises
+        3) observables
+        ---
+        ---etc
+
+        callbacks
+        *********
+            passing one function defination to another function parameter called as callback
+    -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>callBacks</title>
+    </head>
+    <body>
+        <!-- <script>
+            function fun_one(param1){
+                param1();
+            }
+            fun_one(
+            function fun_two(){
+                document.write("welcome to callback");
+            }
+            );
+            //welcome to callback
+        </script> -->
+
+        <!-- <script>
+            let func_one = (param1, param2, param3) =>{
+            param1();
+            param2();
+            param3();
+            };
+            func_one(()=>{
+                document.write("ReactJS");
+            }, ()=>{
+                document.write("NodeJS");
+            }, ()=>{
+                document.write("MongoDB");
+            });
+            //ReactJS NodeJS MongoDB
+        </script> -->
+
+        <!-- <script>
+            let fun_one=(param1)=>{
+            return param1("Hello");
+            }
+            fun_one((x)=>{
+                document.write(x);
+            });
+            //Hello
+        </script> -->
+
+        <script>
+            let func_one=(param1)=>{
+                return param1(100, 200, 300);
+            }
+            func_one((res1, res2, res3)=>{
+                document.write(res1, res2, res3);
+            });
+            //100 200 300
+        </script>
+    </body>
+    </html>

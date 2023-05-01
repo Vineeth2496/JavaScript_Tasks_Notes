@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Closure</title>
+</head>
+<body>
+    <!-- <script>
+        function func_one(){
+            var x=100;
+            var y=200;
+            return ()=>{
+                console.log(x);
+                console.log(y);
+            }
+        }
+        console.dir (func_one());
+
+            // Output:
+            // [[Scopes]]: Scopes[2]
+            // 0: Closure (func_one)
+            // x: 100
+            // y: 200
+        
+    </script> -->
+
+    <script>
+        // for(var i=0; i<5; i++)
+        // {
+        //     //console.log(i);
+        //     setTimeout(()=>{
+        //         console.log(i);
+        //     }, 5000);
+        // }
+        // 5 5 5 5 5
+
+        // for(let i=0; i<5; i++)
+        // {
+        //     //console.log(i);
+        //     setTimeout(()=>{
+        //         console.log(i);
+        //     }, 5000);
+        // }
+        // ES6
+        // 0 1 2 3 4
+
+        //ES9
+        //IIFE(Immidate Invokable Functional Expression)
+        for(let i=0; i<5; i++)
+        {
+            //console.log(i);
+            ((i)=>{
+            setTimeout(()=>{
+                console.log(i);
+            }, 5000);
+        })(i)
+        }
+        // 0 1 2 3 4
+        // if any inner function is accessing outer function data, called as closure
+        // we can overcome closure with var keyword in 2 ways
+        // let (ES6)
+        // IIFE (ES9) Immediate Invokable Function Expression
+    </script>
+</body>
+</html>

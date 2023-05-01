@@ -1,0 +1,215 @@
+<!--
+    variables
+    *********
+        variable are used to store data
+        Ex:
+            string
+            number
+            boolean
+            arrays
+            objects
+            --
+            --
+            we will declare variables with the help of 
+            1) var  2) let 3) const 4) nothing
+            let and const are introduced in ES6 version (ECMA Script)
+            
+            variables declaration should  contains a-z, A-Z, 0-9, $ and _
+
+            variables declaration should not starts with
+
+            syntax:
+
+            var/let/const/nothing variable_name = value
+
+            Ex:
+
+                var msg = "welcome to javascript";
+
+                javascript supports 7 datatypes
+
+                1) string
+                2) number
+                3) boolean
+                4) undefined
+                5) null
+                6) bigint
+                7) symbol
+
+                string
+                ******
+                    collection of "characters" called as "string"
+
+                    we can declare variable in 3 ways
+                    1) ""   (double quotes)
+                    2) ''   (single quotes)
+                    3) ``   (back tick)
+                    ``(back tick) called as "temporary literal"
+                    ``(back tick) operator introduced in "ES6"
+                    ``(back tick) opearator used to define the "paragraphs"
+
+                 number
+                 *****
+                    javascript supports following types of numbers
+                    1) decimal
+                    2) double
+                    3) hexadecimal  (should starts with 0x) (hexadecimal number may contain A-F)
+                    4) octal        (should starts with 0o)
+                    5) binary       (should starts with 0b) (binary number should contain only '0' and '1')  
+
+                boolean
+                *******
+                    javascrpit supports following boolean values
+                    1) true --------------- 1
+                    2) false -------------- 0
+
+                undefined
+                ********
+                    undefind is the datatype in javascript 
+                    variable decalred but value assigned called as undefined
+
+                null
+                ***
+                    null also datatype in javasript
+                    
+                    making "un-used members" availablity to garbage collector called as "null" (clearing the browser memory is called null)
+
+                bigint
+                *****
+                    bigint used to store the large numbers
+                    bigint introduced in "ES6" version
+                    bigint numbers suffix with "n";
+                    range of bigint is 2^53-1 to -2^53-1
+
+                Symbol
+                ******
+                    it is used to represent  the data uniquley
+                    symbol also introduced in ES6 vesion
+
+                    
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    
+    <script>
+        
+        var sub_one=`React JS`;
+        var sub_two=`Node JS`;
+        var sub_three=`MangoDB`;
+        var mern_stack1=`React JS <==> Node JS <==> MangoDB`;
+        var mern_stack=`${sub_one} ,,,,, ${sub_two} <==> ${sub_three},,, ${mern_stack1}`;
+        document.writeln(mern_stack1);
+        document.writeln("<br><br>");
+        document.writeln(mern_stack);
+        document.writeln("<br><br>");
+
+        var decimal_number= 100;
+        var double_number=100.02335;
+        var hexadecimal_number=0x123ABC;
+        var octal_number= 0o123;
+        var binary_number=0b1011;
+        document.writeln(decimal_number,"<br>", 
+                        double_number, "<br>",
+                        hexadecimal_number,"<br>", 
+                        octal_number,"<br>", 
+                        binary_number);
+        document.write("<br><br>");
+        //100
+        //100.02335
+        //1194684 
+        //83
+        //11        
+        // javascript internally converts hexadecimal, octal, binary to decimal numbers
+
+        var flag=true;
+        var flag1=false;
+
+        flag ? document.write("true block") : document.write("false black");
+        document.write("<br>");
+        flag1 ? document.write("true block") : document.write("false black");
+        document.write("<br><br>");
+
+        var x;
+        document.writeln(x);        // undefined
+        document.writeln("<br><br>")
+
+        x=null;
+        document.writeln(x);        //null
+        document.writeln("<br><br>")
+
+        var large= 1111112789812222391731097777777777777777777777777791723017230713071207317n;
+        document.writeln(large);
+        document.write("<br><br>");
+
+        var r101=Symbol(100);
+        var r102=Symbol(100);
+        console.log(r101);      //Symbol(100)
+        console.log(r102);      //Symbol(100)
+        //document.write(r101, r102);
+        document.write("<br><br>");
+
+        //typeof operator
+        document.write(typeof "Hello");     //string
+        document.write("<br>");
+        document.writeln(typeof 100);       //number
+        document.write("<br>");
+        document.write(typeof true)         //boolean
+        document.write("<br>");
+        document.write(typeof undefined)    //undefined
+        document.write("<br>");
+        document.write(typeof null)         //object
+        document.write("<br>");
+        document.write(typeof 100n);        //bigint
+        document.write("<br>");
+        document.write(typeof Symbol(100)); //symbol
+        document.write("<br>");
+        document.write(typeof []);           //object
+        document.write("<br>");
+        document.write(typeof {});           //object
+        document.write("<br><br>");
+
+        var arr1=[10, 20, 30, 40, 50];  
+        // to iterate arrays we have advanced loops
+        // forEach()
+        // for...of()
+        // function without name called as anyonymus function
+        arr1.forEach(function(element, index){
+            document.write(element," ---- ",index);
+            document.write("<br><br>");
+        });     
+
+        for(var v1 of arr1)
+        {
+            document.write(v1);
+            document.write("<br>");
+        }
+
+        //JSON stands for JavaScript Object Notation
+        //JSON used to transfer the data over the network
+        //JSON is light weight 
+        //Objects   ---- {}
+        //Arrays    ---- []
+        //data      ---- key and value pairs
+        //key and value saparated by using " : "
+        //key and value pairs saparated using " , "
+
+        var obj={
+            key1 : "ReactJS",
+            key2 : "NodeJS",
+            key3 : "MangoDB"
+        };
+        document.write(obj.key1, obj.key2, obj.key3 );
+
+    </script>
+
+</body>
+</html> 

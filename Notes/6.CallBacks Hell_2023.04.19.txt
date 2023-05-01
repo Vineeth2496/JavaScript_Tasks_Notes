@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Call Back Hell</title>
+</head>
+<body>
+    <script>
+        let add=(num, callback)=>{
+
+            callback(num+5, false);
+        }
+        let sub=(num, callback)=>{
+            callback(num-3, false);
+        }
+        let mul=(num, callback)=>{
+                callback(num*2, false);
+        }
+        let div=(num, callback)=>{
+                callback(num/2-2, false);
+        }
+
+        add(5,(addRess, error)=>{
+            if(!error)
+            {
+            //    console.log(addRess);
+                sub(addRess, (subRes, error)=>{
+                    if(!error)
+                    {
+                     //   console.log(subRes);
+                     mul(subRes, (mulRes, error)=>{
+                        if(!error)
+                        {
+                        //      console.log(mulRes); 
+                        div(mulRes, (divRes, error)=>{
+                            if(!error)
+                            {
+                                console.log(divRes);
+                            }
+                        })
+                        }
+                     })
+                    }
+                })
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+
+    dependencies between callbacks called as callback hell
+    callbacks never recomended in real time.
+    alternative solutions or callback hell is Promises
+-->

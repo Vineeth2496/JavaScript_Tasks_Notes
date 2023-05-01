@@ -1,0 +1,264 @@
+<!--
+    perticular business logic called as function
+
+    functions are used to reuse the business logics
+
+    we have 3 types of functions
+    1) named functions
+    2) anonymous functions
+    3) arrow functions
+
+    named functions
+    ***************
+        the function with user defined name called as named functions
+    syntax:
+    *******
+        function defination
+        +++++++++++++++++++
+        
+        function function_name(parameter1, parameter2, parameter3,...parametern){
+            business logic
+        }
+
+        functions calling
+        ++++++++++++++++++
+        
+        function_name(argument1,argument2,argument3,.....argumentn)
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Named Functions</title>
+    </head>
+    <body>
+        <!-- <script>
+            function func_one(){
+                document.write("Welcome to named functions <br><br>");
+            }
+           func_one();
+           func_one();
+           func_one();
+        </script> -->
+
+        <!-- <script>
+            function func_one(){
+                document.write("welcom to named functions <br><br>");
+            }
+            document.write(func_one) ;  //function defination
+        </script> -->
+
+        <!-- <script>
+            function func_one(parameter1, parameter2, parameter3){
+                document.write(parameter1, parameter2, parameter3);
+            }
+            func_one("Hello Darling ",   "Hai Gorgeous ", "Looking Beautiful");
+                        //Hello Darling Hai Gorgeous Looking Beautiful
+            func_one(100 , 200 , 300 , 400);
+                        //100 200 300
+            func_one(); //undefinedundefinedundefined
+            func_one(undefined, "Hai Beautiful");
+                        //undefined Hai Beautiful undefined
+            func_one(null,null,null,100);
+                        //null null null
+        </script> -->
+
+        <!-- <script>
+            function func_one(){
+                return 100;
+            }
+            let x=func_one();
+            document.write(x * x);  //10000
+        </script> -->
+
+        <!-- <script>
+            function func_one(){
+                return 1&1? "Hello" : "Bye";
+            }
+            let result=func_one();
+            document.write(result);     //Hello
+        </script> -->
+
+        <!-- <script>
+            function func_one(parameter1){
+                return parameter1 *parameter1;
+            }
+            let res1=func_one(10);
+            document.write(res1 * res1);    //10000
+        </script> -->
+
+        <!-- <script>
+            // ... called as spread operator
+            // spread operator introduced in ES6 vesion
+            // defalut value of spread operator is [] (Empty array)
+            function func_one(...parameter1){
+                document.write(parameter1);
+            }
+            func_one(10);               //[10]
+            func_one(10, 20, 30);       //[10,20,30]
+            func_one("Katherine", " Margott", " Gal Gadot ");
+                                        //[Katherine, Margott, Gal Gadot]
+            func_one();                 //[]
+            func_one(undefined, undefined);     //[undefined, undefined] [,]
+            func_one(null, null, undefined);    //[null, null, undefined] [, ,]
+        </script> -->
+
+        <!-- <script>
+            function func_one(...parameter1, ...parameter2){
+
+            }
+            //Note : we can pass only one spread operator per function
+        </script> -->
+        <!-- <script>
+            function func_one(...parameter2, parameter1){
+
+            }
+            //Note: spread operator occurance always last in parameters
+        </script> -->
+        <!-- <script>
+            function func_one(parameter1, ...parameter2){
+                document.write(parameter1, parameter2);
+            }
+             func_one();                         //undefined []
+             func_one(100,100);                  //100 100
+             func_one(100, 200, 300);            //100 [200,300]
+             func_one(undefined, undefined);     //undefined [undefined] 
+             func_one(nul, 100, null);           //null [100, null]
+                                                 //Uncaught ReferenceError: nul is not defined
+        </script> -->
+
+        <!-- 2022/11/21 -->
+        <!-- <script>
+            //while defining the function we will intilize the parameters
+            // this concept is called default parameters in function
+            // Introduced in ES6
+            function func_one(parameter1="Hello"){
+                document.write(parameter1);
+            }
+            //func_one();               // Hello
+            //func_one("Welcome");      // Welcome
+            //func_one(undefined);      // Hello
+              func_one(null);           // null
+        </script> -->
+
+        <!-- <script>
+            function func_one(parameter1, parameter2="Hello2", parameter3="Hello3", ...parameter4){
+                document.write(parameter1, parameter2, parameter3, parameter4);
+            }
+            //func_one();                   //undefined Hello2 Hello3 []
+            //func_one("Hello1", undefined, undefined, "Hello4");
+                                            //Hello1 Hello2 Hello3 [Hello4]
+            //func_one(undefined, undefined, undefined, undefined);
+                                            //undefined Hello2 Hello3 [undefined]
+            //func_one(null, null, null, null);
+                                            //null null null [null]                                            
+        </script> -->
+
+        <!-- <script>
+            //Anonymous function
+            //The function without name called as Anonymous function
+
+            var x=function(){
+                document.write("Welcome to anonymous function");
+            }
+            x();                            // Welcome to anonymous function
+        </script> -->
+
+        <!-- <script>
+            let x=function(parameter1){
+                document.write(parameter1);
+            }
+            //x("Hello");                    //Hello
+            //x();                           //undefined
+            //x(null);                       //null
+        </script> -->
+        
+        <!-- <script>
+            // Rule1: Create the function
+            // Rule2: call the function
+
+             func_one();                //Hello
+                                        //Uncaught TypeError: func_one is not a function
+            // function func_one(){
+            //     document.write("Hello");
+            // }
+            
+            var func_one = function(){
+                document.write("Hello");
+            }
+            // function hoisting is possible in named function
+            // function hoisting is not possible in anonymous function
+
+        </script> -->
+        
+        <!-- 
+            Arrow function 
+
+            Arrow functions introduced in ES6 version
+
+            we will represent Arrow Function with =>
+        
+        -->
+
+        <!-- <script>
+            var x = () =>{
+                document.write("Welcome to arrow function");
+            }
+            x();            //Welcome to arrow function
+            
+        </script> -->
+
+        <!-- <script>
+            let x=(parameter1, parameter2, parameter3)=>{
+                document.write(parameter1, parameter2, parameter3);
+            }
+            x("Katherine ", " Margott", " Gal Gadot");  //Katherine Margott Gal Gadot
+        </script> -->
+
+        <!-- <script>
+            let x = () =>{
+                return "welcome to arrow function";
+            }
+            let res=x();
+            document.write(res); //welcome to arrow function
+        </script> -->
+
+        <!-- <script>
+            let x=() => "welcome to arrow function";
+            let res=x();
+            document.write(res);    //welcome to arrow function
+        </script> -->
+
+        <!-- <script>
+            let x=(parameter1) => parameter1 * parameter1;
+            let res=x(10);
+            document.write(res);       //100
+
+            //short hand functions
+        </script> -->
+
+       <!-- <script>
+        setTimeout(function(){
+            document.write("Hello");
+        } ,5000);
+        //Hello 
+        //setTimeout is used to execute Anonymous funtion or Arrow function after some time
+       </script>  -->
+
+       <!-- <script>
+        setTimeout(()=>{
+            document.write("Hello");
+        },5000);
+       </script> -->
+
+       <!-- <script>
+        let x=setInterval(function()  {
+            document.write(new Date().toLocaleString()+"<br>");
+        }, 1000);
+
+        //setInterval is used to execute function continously
+        clearTimeout(x);
+        //clearTimeout is used to break the setInterval execution
+       </script> -->
+    </body> 
+</html>

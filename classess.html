@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Constructor Function</title>
+</head>
+<body>
+    <!-- <script>
+        function class_one(){
+            this.sub_one="ReactJS";
+            this.sub_two="NodeJS";
+            this.sub_three="MongoDB";
+        }
+        let obj1=new class_one();
+        document.write(obj1.sub_one, obj1.sub_two, obj1.sub_three);
+        document.write("<br>");
+        let obj2=new class_one();
+        document.write(obj2.sub_one, obj2.sub_two, obj2.sub_three);
+        //ReactJSNodeJSMongoDB
+        //ReactJSNodeJSMongoDB
+    </script> -->
+
+    <!-- <script>
+        function class_one(){
+            this.var_one="Hello";
+            this.func_one=function(){
+                return "Welcome";
+            }
+        }
+        let obj=new class_one();
+        document.write(obj.var_one, obj.func_one());
+        //Hello Welcome
+    </script> -->
+    <!-- <script>
+        function class_one(){
+            this.var_one="Hello";
+            this.func_one=function(){
+                return this.var_one;
+            }            
+        }
+        let obj =new class_one();
+        document.write(obj.func_one());
+        //Hello
+    </script> -->
+
+    <!-- <script>
+        function class_one(){};
+        class_one.prototype.var_one="Hello Darling";
+        // prototype used to refer the "Constructor" function
+        let obj=new class_one();
+        document.write(obj.var_one);
+        //Hello Darling
+    </script> -->
+    <!-- <script>
+        function class_one(){};
+        class_one.prototype.var_one="ReactJS";
+        class_one.prototype.func_one= function(){
+            return "NodeJS";
+        }
+        let obj=new class_one()
+        document.write(obj.var_one);
+        document.write(obj.func_one());
+        //ReactJS NodeJS
+    </script> -->
+
+    <!-- <script>
+        function Parent(){};
+        Parent.prototype.var_one="Parent Class";
+
+        function Child(){};
+        Child.prototype = Object.create(Parent.prototype);
+    </script> -->
+    <!-- <script>
+        function class_one(){};
+        class_one.prototype.var_one="Parent Class";
+
+        function class_two(){};
+        class_two.prototype = Object.create(class_one.prototype);
+        class_two.prototype.var_two="Child Class";
+
+        let obj=new class_two();
+        document.write(obj.var_one, obj.var_two);
+        //Parent Class Child Class
+    </script> -->
+
+    <script>
+        function class_one(){};
+        class_one.prototype.var_one="Hello_1";
+        class_one.prototype.func_one= function(){
+            return "Hello_2";
+        }
+        function class_two(){};
+        class_two.prototype =Object.create(class_one.prototype);
+        class_two.prototype.var_two="Welcome_1";
+        class_two.prototype.func_two= function(){
+            return "Welcome_2"
+        }
+        let obj=new class_two();
+        document.write(obj.var_one, obj.var_two, obj.func_one(), obj.func_two());
+        //Hello_1 Welcome_1 Hello_2 Welcome_2
+</script>
+</body>
+</html>
+
+
+

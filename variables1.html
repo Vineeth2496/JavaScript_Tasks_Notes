@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variables</title>
+</head>
+<body>
+   
+    <!-- <script>
+        //  var x=100;
+        //  var x=200;
+        //  document.write(x);
+        //var   :  200
+          let x=100;
+          let x=200;
+          document.write(x);
+        //let   :  Uncaught SyntaxError: Identifier 'x' has already been declared
+        //var keyword allows the duplicate variables
+        //let keyword wont allows the duplicate variables
+    </script>
+      -->
+    <!-- <script>
+    document.write(x);
+    let x=100;
+     
+    //var : undefined
+    //let : Uncaught ReferenceError: Cannot access 'x' before initialization
+
+    //accessing variable before declaration and initilization with var keyword called as variable hoisting
+    //variable hoisting is raised with var keyword
+    //we can overcome variable hoisting with let keyword
+    </script> -->
+
+    <!-- <script>
+        function func_one(){
+            {
+                var x=100;
+                let y=200;
+            }
+            //document.write(x);   //100
+            document.write(y);     //variables1.html:40 Uncaught ReferenceError: y is not defined at func_one
+        }
+        func_one();
+        //var members are functional scope members
+        //let members are block scope members
+    </script> -->
+    <!-- 
+    <script>
+        let x=100;
+        {
+            let x=200;
+        }
+        document.write(x);
+
+        //var : 200
+        //let : 100
+
+        //global polluting issue raised because of var keyword
+        //we can overcome global polluting issue with let keyword
+
+    </script> -->
+        <!--
+                var                                           let
+        ============================================================================  
+        var keyword introduced in               let keyword introduced in
+        ES1 version                             ES6
+        duplicate variables are allowed         duplicate variable are not allowed
+
+        variable hoisting is raised             we can overcome variable hoisting
+        because of var keyword                  with let keyword
+
+        global polluting issue is               global polluting issue we can overcome
+        raised because of var keyword           with let keyword
+
+        var members are functional              let members are block scope members
+        scope members
+        -->                
+
+        <!--
+            const
+            *****
+            const is the keyword introduced in ES6 version
+            const keyword used to declare the variables
+            re-initalization not possible with const keyword
+        -->
+
+        <!-- <script>
+            // const x=100;
+            // x=200;
+            //Uncaught TypeError: Assignment to constant variable.
+
+            const arr1=[10, 20, 30, 40, 50];
+            // arr1 = [];      
+                     //Uncaught TypeError: Assignment to constant variable.
+            // arr1 = [100, 200, 300, 400, 500];   
+                     //Uncaught TypeError: Assignment to constant variable.
+
+            arr1[0] = 100;
+            arr1[4] = 500;
+            arr1[5] = 600;
+            //arr1[7] = 800;
+            document.write(arr1);   //100,20,30,40,500,600
+            
+            const obj = {
+                key1 : "ReactJS",
+                key2 : "NodeJS",
+                key3 : "MangoDB"
+            };
+            //obj = {};   
+                //Uncaught TypeError: Assignment to constant variable.
+
+            //  obj = {key1 : "ReactJS with TypeScript",
+            //         key2 : "NodeJS with TypeScript",
+            //         key3 : "MangoDB with cloud" };
+                //Uncaught TypeError: Assignment to constant variable.
+
+            obj.key1 = "ReactJS with TypeScript";
+            obj.key2 = "NodeJS with TypeScript";
+            obj.key3 = "MangoDB with cloud";
+
+            document.write(JSON.stringify(obj));
+            //{"key1":"ReactJS with TypeScript","key2":"NodeJS with TypeScript","key3":"MangoDB with cloud"}
+        </script> -->
+
+        <script>
+            x=100;
+            document.write(x);      //100
+        </script>
+
+</body>
+</html>

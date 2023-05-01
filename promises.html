@@ -1,0 +1,208 @@
+<!--
+    PROMISES
+    ********
+        promises are used to make Asynchronous calls
+
+        promises are special JavaScript Objects
+
+        Promises have 3 States
+        1)Pending
+        2)Resolve
+        3)Reject
+
+        CREATING THE PROMISE
+        ********************
+            Promise is the predefined class, used to create the Promises
+
+        CONSUME THE PROMISE
+        *******************
+            We will consume Promise in two ways 
+            1) then()
+            2) async & await
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promises</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+     <!-- <script>
+        let promise_1=new Promise((resolve, reject)=>{
+            resolve("welcome to promise in javascript ");
+        });
+        // promise_1.then((posRes)=>{
+        //     document.write(posRes);
+        // },(errRes)=>{
+        //     document.write(errRes);
+        // });
+
+        async function consume(){
+            let res= await promise_1;
+            document.write(res)
+        }
+        consume();
+    </script>  -->
+
+    <!-- <script>
+        let promise1=new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("Hello_1");
+            },0);
+        });
+
+        // let promise2=new Promise((resolve, reject)=>{
+        //     setTimeout(()=>{
+        //         resolve("Hello_2");
+        //     },5000);
+        // });
+
+        let promise2=new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                reject("Call Failed");
+            },5000);
+        });
+
+        let promise3=new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("Hello_3");
+            },10000);
+        });
+
+        // promise1.then((posRes)=>{
+        //     document.write(posRes);
+        // },(errRes)=>{
+        //     document.write(errRes);
+        // });
+
+        // promise2.then((posRes)=>{
+        //     document.write(posRes);
+        // },(errRes)=>{
+        //     document.write(errRes);
+        // });
+
+        // promise3.then((posRes)=>{
+        //     document.write(posRes);
+        // },(errRes)=>{
+        //     document.write(errRes);
+        // });
+
+            // Promise.all([promise1, promise2, promise3])
+            //         .then((posRes)=>{
+            //             document.write(posRes);
+            //         }, (errRes)=>{
+            //             document.write(errRes);
+            //         });
+
+                    //Hello_1,Hello_2,Hello_3
+
+        // all function is used to overcome the data redundancy (used to consume all functions at a time)        
+                    // Promise.all([promise1, promise2, promise3])
+                    // .then((posRes)=>{
+                    //     document.write(posRes);
+                    // }, (errRes)=>{
+                    //     document.write(errRes);
+                    // });                    
+                    // Call Failed
+        // all method will execute only failed promise it will not highlight success 
+
+
+        // Promise.race([promise1, promise2, promise3]).then((posRes)=>{
+        //         document.write(posRes);
+        //     }, (errRes)=>{
+        //         document.write(errRes);
+        //     });
+
+            // race method is used to know which promise will execute first 
+
+            Promise.allSettled([promise1, promise2, promise3]).then((posRes)=>{
+                console.log(posRes);
+            }, (errRes)=>{
+                console.log(errRes);
+            }); 
+
+// 0: {status: 'fulfilled', value: 'Hello_1'}
+// 1: {status: 'rejected', reason: 'Call Failed'}
+// 2: {status: 'fulfilled', value: 'Hello_3'}
+// length: 3
+            
+    </script> -->
+
+
+
+    <!--
+        1) what is promise
+        2) why promises
+        3) difference between callbacks and promises
+        4) how to create promise
+        5) how to consume promise
+        6) what is all() function
+        7) what is race() function
+        8) what is allSettled()
+        9) what is async & wait 
+    -->
+    <!-- <script>
+        let add=(num)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(num+5);
+            })
+        }
+
+        let sub=(num)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(num-3);
+            })
+        }
+
+        let mul=(num)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(num*2);
+            })
+         }
+ 
+        let div=(num)=>{
+            return new Promise((resolve, reject)=>{
+                resolve(num/2-2);
+            })
+        }
+
+        let consume=async ()=>{
+            let addRes=await add(5);
+            let subRes=await sub(addRes);
+            let mulRes=await mul(subRes);
+            let divRes=await div(mulRes);
+            document.writeln(addRes, subRes, mulRes, divRes);
+        }
+        consume();
+        //10 7 14 5
+
+    </script> -->
+
+
+    <script>
+        function restAPICall(){
+            return new Promise((resolve, reject)=>{
+                $.ajax({
+                    method : "GET",
+                    url: "https://www.w3schools.com/angular/customers.php",
+                    success : (posRes)=>{
+                        resolve(posRes);
+                    },
+                    error:(errRes)=>{
+                            reject(errRes);
+                    }
+                })
+            })
+        }
+
+        async function consume(){
+            let res=await restAPICall();
+            document.write(res);
+        }
+        consume();
+        //$ajax("https://www.w3schools.com/angular/customers.php")
+    </script>
+</body>
+</html>
